@@ -16,7 +16,10 @@ if(!defined('CRLF')) {
 /**
  * Wraps native Redis errors in friendlier PHP exceptions
  */
-class RedisException extends \Exception {
+if( !class_exists( 'RedisException' ) )
+{
+	class RedisException extends \Exception {
+	}
 }
 
 /**
